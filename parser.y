@@ -25,6 +25,8 @@ int yyerror(yyscan_t scanner, struct Expression **expression, const char *msg);
 %token <string> TOKEN_GISMU
 
 %token TOKEN_BO
+%token TOKEN_KE
+%token TOKEN_KEHE
 
 %type <expression> gismu;
 %type <expression> bridi
@@ -51,6 +53,7 @@ brivla
 sampubrivla
     : gismu { $$ = $1; }
     | gismu TOKEN_BO sampubrivla { $$ = makeTanru($3, $1); }
+    | TOKEN_KE brivla TOKEN_KEHE { $$ = $2; }
     ;
 
 gismu

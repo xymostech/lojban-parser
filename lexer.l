@@ -19,7 +19,9 @@ C [bcdfgjklmnprstvxyz']
 
 %%
 
-bo { yylval->string = yytext; return TOKEN_BO; }
+bo { return TOKEN_BO; }
+ke { return TOKEN_KE; }
+ke'e { return TOKEN_KEHE; }
 
 {DOT}{V}  { yylval->string = yytext; return TOKEN_CMAVO; }
 {C}{V}    { yylval->string = yytext; return TOKEN_CMAVO; }

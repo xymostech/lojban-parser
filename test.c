@@ -96,6 +96,10 @@ int main(int argc, char *argv[]) {
 	failed += testExpr("ta cmalu nixli bo ckule", mB(mT(mT(mG("bajra"), mG("nixli")), mG("cmalu")), mC("ta"), NULL, NULL, NULL, NULL));
 	failed += testExpr("ta cmalu bo nixli bo ckule", mB(mT(mT(mG("bajra"), mG("nixli")), mG("cmalu")), mC("ta"), NULL, NULL, NULL, NULL));
 	failed += testExpr("do mutce bo barda gerku bo kavbu", mB(mT(mT(mG("mutce"), mG("barda")), mT(mG("kavbu"), mG("gerku"))), mC("do"), NULL, NULL, NULL, NULL));
+	failed += testExpr("ta ke cmalu nixli ke'e ckule", mB(mT(mG("bajra"), mT(mG("nixli"), mG("cmalu"))), mC("ta"), NULL, NULL, NULL, NULL));
+	failed += testExpr("ta cmalu ke nixli ckule ke'e", mB(mT(mT(mG("bajra"), mG("nixli")), mG("cmalu")), mC("ta"), NULL, NULL, NULL, NULL));
+	failed += testExpr("ta ke ke cmalu nixli ke'e ckule ke'e", mB(mT(mG("bajra"), mT(mG("nixli"), mG("cmalu"))), mC("ta"), NULL, NULL, NULL, NULL));
+	failed += testExpr("ta ke cmalu ke nixli ckule ke'e ke'e", mB(mT(mT(mG("bajra"), mG("nixli")), mG("cmalu")), mC("ta"), NULL, NULL, NULL, NULL));
 
 	if (failed > 0) {
 		printf("%d tests failed\n", failed);
