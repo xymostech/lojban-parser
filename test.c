@@ -100,6 +100,7 @@ int main(int argc, char *argv[]) {
 	failed += testExpr("ta cmalu ke nixli ckule ke'e", mB(mT(mT(mG("bajra"), mG("nixli")), mG("cmalu")), mC("ta"), NULL, NULL, NULL, NULL));
 	failed += testExpr("ta ke ke cmalu nixli ke'e ckule ke'e", mB(mT(mG("bajra"), mT(mG("nixli"), mG("cmalu"))), mC("ta"), NULL, NULL, NULL, NULL));
 	failed += testExpr("ta ke cmalu ke nixli ckule ke'e ke'e", mB(mT(mT(mG("bajra"), mG("nixli")), mG("cmalu")), mC("ta"), NULL, NULL, NULL, NULL));
+	failed += testExpr("ta melbi ke cmalu nixli bo ckule ke'e", mB(mT(mT(mT(mG("ckule"), mG("nixli")), mG("cmalu")), mG("melbi")), mC("ta"), NULL, NULL, NULL, NULL));
 
 	if (failed > 0) {
 		printf("%d tests failed\n", failed);
